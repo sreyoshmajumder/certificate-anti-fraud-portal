@@ -1,0 +1,116 @@
+.nav-root {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 23, 42, 0.92),
+    rgba(15, 23, 42, 0.88),
+    transparent
+  );
+  border-bottom: 1px solid rgba(30, 64, 175, 0.3);
+}
+
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: radial-gradient(circle at top left, #facc15, #22c55e, #4f46e5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #020617;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.8);
+}
+
+.nav-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.nav-tagline {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-link {
+  position: relative;
+  font-size: 13px;
+  color: #cbd5f5;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 999px;
+  transition: color 0.18s ease, background 0.18s ease, transform 0.15s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset: auto 10px -2px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #4f46e5, #22c55e);
+  opacity: 0;
+  transform: scaleX(0.6);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.nav-link:hover {
+  background: rgba(31, 41, 55, 0.8);
+  transform: translateY(-1px);
+}
+
+.nav-link.active {
+  background: rgba(30, 64, 175, 0.35);
+  color: #e5e7eb;
+}
+
+.nav-link.active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .nav-inner {
+    padding-inline: 14px;
+  }
+  .nav-tagline {
+    display: none;
+  }
+  .nav-links {
+    gap: 8px;
+  }
+  .nav-link {
+    padding-inline: 8px;
+  }
+}
